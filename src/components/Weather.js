@@ -13,7 +13,7 @@ function Weather({ data }) {
       )}
       {data.temperature && (
         <p className='weather__key'>
-          Temperature: <span className='weather__value'> {data.temperature}</span>
+          Temperature: <span className='weather__value'> {data.temperature}°C</span>
         </p>
       )}
       {data.humidity && (

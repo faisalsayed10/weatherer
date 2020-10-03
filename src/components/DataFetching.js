@@ -9,9 +9,8 @@ function DataFetching() {
   const getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    const country = e.target.elements.country.value;
     const fetch_data = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`
     );
     const data = await fetch_data.json();
     if (!data.message) {
@@ -42,7 +41,7 @@ function DataFetching() {
             <div className="title-container">
               <Headings />
             </div>
-            <div className="form-container">
+            <div className="form_data-container">
               <Form getWeather={getWeather} />
               <Weather data={data} />
             </div>
