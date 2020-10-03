@@ -1,32 +1,32 @@
 import React from "react";
 
-function Weather({ temperature, city, country, humidity, description, error }) {
+function Weather({ data }) {
   return (
     <div className="weather__info">
-      {city && country && (
+      {data.city && data.country && (
         <p className='weather__key'>
           Location:{" "}
           <span className='weather__value'>
-             {city}, {country}
+             {data.city}, {data.country}
           </span>
         </p>
       )}
-      {temperature && (
+      {data.temperature && (
         <p className='weather__key'>
-          Temperature: <span className='weather__value'> {temperature}</span>
+          Temperature: <span className='weather__value'> {data.temperature}</span>
         </p>
       )}
-      {humidity && (
+      {data.humidity && (
         <p className='weather__key'>
-          Humidity: <span className='weather__value'> {humidity}</span>
+          Humidity: <span className='weather__value'> {data.humidity}</span>
         </p>
       )}
-      {description && (
+      {data.description && (
         <p className='weather__key'>
-          Conditions: <span className='weather__value'> {description}</span>
+          Conditions: <span className='weather__value'> {data.description}</span>
         </p>
       )}
-      <p className='weather__key'>{error}</p>
+      <p className='weather__key'>{data.error}</p>
     </div>
   );
 }
