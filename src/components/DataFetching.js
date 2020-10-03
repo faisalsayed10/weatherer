@@ -39,17 +39,15 @@ function DataFetching() {
     <div>
       <div className="wrapper">
         <div className="main">
-          <div className="row">
-            <div className="col-5 title-container">
+            <div className="title-container">
               <Headings />
             </div>
-            <div className="col-7 form-container">
+            <div className="form-container">
               <Form getWeather={getWeather} />
               <Weather data={data} />
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
